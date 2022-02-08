@@ -1,0 +1,6 @@
+Terminal
+  celery -A Main(this is project name) worker -l info
+New terminal:
+  python manage.py shell
+  >>> from my_app import add 
+  >>> add.delay(5, 10)
