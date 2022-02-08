@@ -3,4 +3,7 @@ Terminal
 New terminal:
   python manage.py shell
   >>> from my_app import add 
-  >>> add.delay(5, 10)
+  >>> add.delay(5, 10) 
+          or 
+  >>> add.apply_async((5, 10), countdown=5)   # returns the result after 5 seconds
+  
