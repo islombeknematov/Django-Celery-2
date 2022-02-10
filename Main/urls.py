@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from my_app_2.views import ReviewEmailView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', ReviewEmailView.as_view(), name='reviews'),
 ]

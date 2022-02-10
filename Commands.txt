@@ -1,0 +1,32 @@
+Command Reference
+
+1. Install Celery
+    - pip install celery
+
+2. Install RabbitMQ (Ubuntu Linux 20.04 LTS)
+    - sudo apt-get install rabbitmq-server
+
+3. Run Celery
+    - celery -A NameOfInstance worker --loglevel=info
+            [ Windows OS ]
+    - celery -A Main worker -l info --pool=solo
+
+4. Run RabbitMQ [ On Windows ]
+
+    Run:
+    - C:\Program Files\RabbitMQ Server\rabbitmq_server-3.8.6\sbin\rabbitmq-server.bat
+
+5. Run first task
+    - python manage.py shell
+    - from my_app.tasks import add
+    - add.delay(2,5)
+
+    or
+
+    add.apply_async((2, 3), countdown=5)
+
+
+# Useful commands
+    # Show message on completion of task
+        logger.info('Sent review email')
+
